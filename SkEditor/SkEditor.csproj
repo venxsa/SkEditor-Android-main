@@ -25,6 +25,10 @@
         <DefineConstants>$(DefineConstants);AOT</DefineConstants>
     </PropertyGroup>
 
+    <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0-android34.0'">
+        <AndroidManifest>Android\AndroidManifest.xml</AndroidManifest>
+    </PropertyGroup>
+
     <ItemGroup>
         <AvaloniaXaml Remove="Assets\*.axaml"/>
         <AvaloniaResource Include="Assets\**"/>
@@ -35,7 +39,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Content Include="Languages\**">
+        <Content Condition="'$(TargetFramework)' != 'net8.0-android34.0'" Include="Languages\**">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
@@ -47,7 +51,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Content Update="Languages\*">
+        <Content Condition="'$(TargetFramework)' != 'net8.0-android34.0'" Update="Languages\*">
             <Generator>MSBuild:Compile</Generator>
         </Content>
     </ItemGroup>
