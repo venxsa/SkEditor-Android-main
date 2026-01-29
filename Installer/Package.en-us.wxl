@@ -1,0 +1,14 @@
+﻿<!--
+This file contains the declaration of all the localizable strings.
+-->
+<WixLocalization xmlns="http://wixtoolset.org/schemas/v4/wxl" Culture="en-US">
+
+  <String Id="DowngradeError" Value="A newer version of [ProductName] is already installed." />
+
+	<String
+		Id="WelcomeDlgTitle"
+		Value="{\WixUI_Font_Bigger}Welcome to SkEditor installer!"/>
+	<String
+		Id="WelcomeDlgDescription"
+		Value="This tool will help you install SkEditor."/>
+</WixLocalization>

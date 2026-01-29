@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SkEditor": {
+      "commandName": "Project",
+      "hotReloadEnabled": false
+    }
+  }
+}
