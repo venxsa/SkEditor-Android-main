@@ -1,0 +1,35 @@
+name: Android Build
+
+on:
+  push:
+    branches: [ "master", "main" ]
+  pull_request:
+    branches: [ "master", "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Install Android Job Workload
+      run: dotnet workload install android
+
+    - name: Restore dependencies
+      run: dotnet restore SkEditor/SkEditor.csproj
+
+    - name: Build
+      run: dotnet build SkEditor/SkEditor.csproj -c Release -f net8.0-android
+      
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: SkEditor-Android
+        path: SkEditor/bin/Release/net8.0-android/*.apk
+        if-no-files-found: warn

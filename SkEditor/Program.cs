@@ -12,10 +12,12 @@ internal class Program
     [STAThread]
     public static void Main(string[] args)
     {
+#if !ANDROID
         GC.KeepAlive(typeof(RelativeSource));
 
         BuildAvaloniaApp()
             .StartWithClassicDesktopLifetime(args);
+#endif
     }
 
     // Avalonia configuration, don't remove; also used by visual designer.
