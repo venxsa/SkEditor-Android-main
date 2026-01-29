@@ -25,11 +25,11 @@ jobs:
       run: dotnet restore SkEditor/SkEditor.csproj
 
     - name: Build
-      run: dotnet build SkEditor/SkEditor.csproj -c Release -f net8.0-android
+      run: dotnet build SkEditor/SkEditor.csproj -c Release -f net8.0-android34.0
       
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
         name: SkEditor-Android
-        path: SkEditor/bin/Release/net8.0-android/*.apk
+        path: SkEditor/bin/Release/net8.0-android34.0/*.apk
         if-no-files-found: warn

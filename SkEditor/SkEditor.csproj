@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType Condition="'$(TargetFramework)' == 'net8.0'">WinExe</OutputType>
-        <OutputType Condition="'$(TargetFramework)' == 'net8.0-android'">Exe</OutputType>
-        <TargetFrameworks>net8.0;net8.0-android</TargetFrameworks>
+        <OutputType Condition="'$(TargetFramework)' == 'net8.0-android34.0'">Exe</OutputType>
+        <TargetFrameworks>net8.0;net8.0-android34.0</TargetFrameworks>
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
@@ -61,7 +61,7 @@
         <PackageReference Include="Avalonia" Version="11.3.0" />
         <PackageReference Include="Avalonia.Controls.ItemsRepeater" Version="11.1.5"/>
         <PackageReference Condition="'$(TargetFramework)' == 'net8.0'" Include="Avalonia.Desktop" Version="11.3.0" />
-        <PackageReference Condition="'$(TargetFramework)' == 'net8.0-android'" Include="Avalonia.Android" Version="11.3.0" />
+        <PackageReference Condition="'$(TargetFramework)' == 'net8.0-android34.0'" Include="Avalonia.Android" Version="11.3.0" />
         <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="11.3.0" />
         <PackageReference Include="Avalonia.Svg.Skia" Version="11.3.0" />
         <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.0" />
